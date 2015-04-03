@@ -1,16 +1,19 @@
 	A função dessa pasta é reunir por matéria todo o tipo de conteúdo dado no curso, seguindo a estrutura abaixo:
 
-.../materiais digitalizados e pdf's
-	/nome da matéria e tipo (Obrigatória, eletiva, optativa)
-		/lista de exercícios
+.../MateriaisDigitalizadosEPDFs
+	/[nome da matéria]+[tipo (Obrigatoria, Eletiva, Optativa)]
+
+		/ListaDeExercicios
 			{arquivos de listas}
-		/provas
+		/Provas
 			{arquivos de provas}
-		/slides
+		/Slides
 			{arquivos de slides}
-		/livros
+		/Livros
 			{arquivos de livros}
-		/outros
+		/Outros
 			{...}
-	/softwares úteis
+	/SoftwaresUteis
 		{...}
+
+OBS: Os nomes dos arquivos/pastas devem ser escritos no formato CamelCase, sem acentos ou caracteres especiais.

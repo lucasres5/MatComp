@@ -1,0 +1,16 @@
+	A função dessa pasta é reunir por matéria todo o tipo de conteúdo dado no curso, seguindo a estrutura abaixo:
+
+.../materiais digitalizados e pdf's
+	/nome da matéria e tipo (Obrigatória, eletiva, optativa)
+		/lista de exercícios
+			{arquivos de listas}
+		/provas
+			{arquivos de provas}
+		/slides
+			{arquivos de slides}
+		/livros
+			{arquivos de livros}
+		/outros
+			{...}
+	/softwares úteis
+		{...}

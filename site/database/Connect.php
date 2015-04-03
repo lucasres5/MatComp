@@ -3,19 +3,20 @@ require_once("DataBaseConnection.php");
 
 class Connect {
 	protected $connection;
-	private $databaseConnection = new DataBaseConnection();
+	private $databaseConnection;
 	
 	public function __construct(){
-		$databaseConnection.__construct();
+		parent::__construct();
+		$databaseConnection = new DataBaseConnection();
 	
-		$this->connection = mysql_connect( $databaseConnection.getUrl(), $databaseConnection.getUsername(), $databaseConnection.getPassword() );
+		$this->connection = mysql_connect( parent::getUrl(), parent::getUsername(), parent::getPassword() );
 		if (!$this->connection) {
 			die('Não conectou: ' . mysql_error() .' <br />'.$php_errormsg);
 		}
 	}
 	
 	public function query($sql) {
-		mysql_select_db($databaseConnection.getDatabase(), $this->connection);	
+		mysql_select_db(parent::getDatabase(), $this->connection);	
 		$Query = mysql_query($sql, $this->connection);
 
 		return $Query;

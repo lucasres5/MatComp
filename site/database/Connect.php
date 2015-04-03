@@ -1,26 +1,20 @@
 <?php 
+require_once("DataBaseConnection.php");
 
-class Connect {
-	private $url;
-	private $username;
-	private $password;
+class Connect extends DataBaseConnection {
 	protected $connection;
-	protected $database;
 	
 	public function __construct(){
-		$this->url = 'localhost';
-		$this->username = 'Usuário';
-		$this->password = 'Senha';
-		$this->database = 'matcomp';
-		
-		$this->connection = mysql_connect($this->url,$this->username,$this->password);
+		parent::__construct();
+	
+		$this->connection = mysql_connect( parent::getUrl(), parent::getUsername(), parent::getPassword() );
 		if (!$this->connection) {
 			die('Não conectou: ' . mysql_error() .' <br />'.$php_errormsg);
 		}
 	}
 	
 	public function query($sql) {
-		mysql_select_db($this->database, $this->connection);	
+		mysql_select_db(parent::getDatabase(), $this->connection);	
 		$Query = mysql_query($sql, $this->connection);
 
 		return $Query;

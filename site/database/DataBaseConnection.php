@@ -8,9 +8,9 @@
 		public function __construct(){
 			// INFORMAR AQUI OS DADOS PARA CONEXÃO COM O BANCO DE DADOS
 			$this->url = 'localhost';
-			$this->username = 'matcomp';  
-			$this->password = 'axiomasdepeano';
-			$this->database = 'matcomp';
+			$this->username = 'Usuário';  
+			$this->password = 'Password';
+			$this->database = 'DB';
 		}
 	}
 ?>

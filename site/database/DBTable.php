@@ -34,5 +34,18 @@ abstract class DBTable extends Connect{
 		$sql .= "WHERE ".$where;
 		return $this->query($sql);
 	}
+
+	// basic selection sintaxe
+	public function seleciona($fields, $from, $where, $groupBy, $having, $orderBy, $limit){
+		$query = "SELECT ".(($fields)?$fields:"*")
+				." FROM ".(($from)?$from : $this->tableName)
+				.(($where)? " WHERE {$where}":"")
+				.(($groupBy)?" GROUP BY {$groupBy}":"")
+				.(($having)?" HAVING {$having}":"")
+				.(($orderBy)?" ORDER BY {$orderBy}":"")
+				.(($limit)?" LIMIT {$limit}":"");
+
+		return $this->query($query);
+	}
 }
 ?>

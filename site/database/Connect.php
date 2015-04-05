@@ -1,22 +1,19 @@
 <?php 
 require_once("DataBaseConnection.php");
 
-class Connect {
+class Connect extends DataBaseConnection{
 	protected $connection;
-	private $databaseConnection;
 	
 	public function __construct(){
 		parent::__construct();
-		$databaseConnection = new DataBaseConnection();
-	
-		$this->connection = mysql_connect( parent::getUrl(), parent::getUsername(), parent::getPassword() );
+		$this->connection = mysql_connect( $this->url, $this->username, $this->password );
 		if (!$this->connection) {
 			die('Não conectou: ' . mysql_error() .' <br />'.$php_errormsg);
 		}
 	}
 	
 	public function query($sql) {
-		mysql_select_db(parent::getDatabase(), $this->connection);	
+		mysql_select_db($this->database, $this->connection);	
 		$Query = mysql_query($sql, $this->connection);
 
 		return $Query;
